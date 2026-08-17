@@ -3,12 +3,12 @@
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import { WeatherIcon } from "./components/WeatherIcon.jsx";
-// import { sunnyWeather } from "./utils/data.js";
-// import { cloudyWeather} from "./utils/data.js";
-import { thunderstormsWeather } from "./utils/data.js";
+import { sunnyWeather } from "./utils/data.js";
+import { cloudyWeather } from "./utils/data.js";
 // import { foggyWeather} from "./utils/data.js";
 // import { snowyWeather } from "./utils/data.js";
 // import { rainyWeather } from "./utils/data.js";
+// import { thunderstormsWeather } from "./utils/data.js";
 
 // BEGIN OEFENING H2 Using JSX =================================
 /* 
@@ -30,18 +30,22 @@ export default App;
 // EIND OEFENING 2 =============================================
 */
 
-// BEGIN OEFENING H3 RENDERING > Pijl functie ===================
+// OEFENING H3 + H4 + H5 RENDERING / PROPS / CONDITIONALS ===================
 
 export const App = () => {
+  let sunny = true;
   return (
     <>
       <h1>Winc Weather App</h1>
       {/* <WeatherIcon weather={rainyWeather} /> */}
-      {/* <WeatherIcon weather={sunnyWeather} /> */}
       {/* <WeatherIcon weather={mistyWeather} /> */}
       {/* <WeatherIcon weather={cloudyWeather} /> */}
       {/* <WeatherIcon weather={foggyWeather} /> */}
-      <WeatherIcon weather={thunderstormsWeather} />
+      {/* {sunny && <WeatherIcon weather={sunnyWeather} />} *}
+      {/* H5 >  && conditional > toont bij sunny = true> Sunny Icon (sunnyWeather) > toon bij sunny = false > Niks */}
+      <WeatherIcon weather={sunny ? sunnyWeather : cloudyWeather} />{" "}
+      {/* H5 > Ternary ? : > toont bij sunny = true > Sunny Icon (sunnyWeather) en 
+      bij sunny = false > Cloudy Icon (cloudyWeather) */}
     </>
   );
 };
