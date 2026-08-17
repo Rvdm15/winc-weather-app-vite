@@ -1,10 +1,14 @@
 import "./WeatherIcon.css";
 
-export const WeatherIcon = () => {
+export const WeatherIcon = ({ weather }) => {
   return (
     <>
-      <img src="/weather-icons/sunny.png" className="weather-icon" />
-      <h2>It&apos;s Sunny!</h2>
+      <img
+        className="weather-icon"
+        src={weather.imageSrc}
+        alt={weather.imageAlt}
+      />
+      <h2>{weather.weatherType}</h2>
     </>
   );
 };
