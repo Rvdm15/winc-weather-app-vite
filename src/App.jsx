@@ -2,13 +2,17 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import "./App.css";
+import { useState } from "react";
 import { WeatherIcon } from "./components/WeatherIcon.jsx";
-import { sunnyWeather } from "./utils/data.js";
-import { cloudyWeather } from "./utils/data.js";
-// import { foggyWeather} from "./utils/data.js";
-// import { snowyWeather } from "./utils/data.js";
-// import { rainyWeather } from "./utils/data.js";
-// import { thunderstormsWeather } from "./utils/data.js";
+import {
+  sunnyWeather,
+  cloudyWeather,
+  snowyWeather,
+  rainyWeather,
+  thunderstormsWeather,
+  foggyWeather,
+  mistyWeather,
+} from "./utils/data.js";
 
 // BEGIN OEFENING H2 Using JSX =================================
 /* 
@@ -33,17 +37,20 @@ export default App;
 // OEFENING H3 + H4 + H5 RENDERING / PROPS / CONDITIONALS ===================
 
 export const App = () => {
-  let sunny = true;
+  const [weather, setWeather] = useState(sunnyWeather);
+
+  // let sunny = true;
   return (
     <>
       <h1>Winc Weather App</h1>
+      {weather && <WeatherIcon weather={weather} />}
       {/* <WeatherIcon weather={rainyWeather} /> */}
       {/* <WeatherIcon weather={mistyWeather} /> */}
       {/* <WeatherIcon weather={cloudyWeather} /> */}
       {/* <WeatherIcon weather={foggyWeather} /> */}
-      {/* {sunny && <WeatherIcon weather={sunnyWeather} />} *}
+      {/* {sunny && <WeatherIcon weather={sunnyWeather} />} */}
       {/* H5 >  && conditional > toont bij sunny = true> Sunny Icon (sunnyWeather) > toon bij sunny = false > Niks */}
-      <WeatherIcon weather={sunny ? sunnyWeather : cloudyWeather} />{" "}
+      {/* <WeatherIcon weather={sunny ? sunnyWeather : cloudyWeather} />{" "} */}
       {/* H5 > Ternary ? : > toont bij sunny = true > Sunny Icon (sunnyWeather) en 
       bij sunny = false > Cloudy Icon (cloudyWeather) */}
     </>
